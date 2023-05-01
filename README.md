@@ -10,7 +10,7 @@ The purpose of this application is to provide students, researchers and professo
 
 Demo:
 
-Link"
+https://mediaspace.illinois.edu/media/t/1_gm3ijiku
 
 Installation: I used the academic world dataset
 
