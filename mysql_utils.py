@@ -27,6 +27,8 @@ def year_pub(range1, range2):
 #widget 3
 def prof_pub(input_value):
     with db.cursor() as cursor:
+        index_sql = 'CREATE INDEX publ_year ON Publication(year);'
+        cursor.execute(index_sql)
         sql = 'select count(publication.id) as count, publication.year from faculty, faculty_publication, publication  where faculty.id = faculty_publication.faculty_id and faculty_publication.publication_id = publication.id and faculty.name like "%' + input_value + '%" GROUP BY publication.year  ORDER BY publication.year ASC;'
         cursor.execute(sql)
         df = DataFrame(cursor.fetchall())
